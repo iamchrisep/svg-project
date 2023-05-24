@@ -1,0 +1,15 @@
+.error {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+.error__icon {
+    height: 3rem;
+    width: auto;
+}
+
+.error__status {
+    font-weight: 700;
+}

@@ -1,3 +1,7 @@
 export const RESET: string = 'RESET'
+export const FETCH_ERROR: string = 'FETCH_ERROR'
+export const CLEAR_ERROR: string = 'CLEAR_ERROR'
 export const START_LOADER: string = 'START_LOADER'
 export const FINISH_LOADER: string = 'FINISH_LOADER'
+export const FETCH_INIT_SUCCESS: string = 'FETCH_INIT_SUCCESS'
+export const FETCH_PROJECT_SUCCESS: string = 'FETCH_PROJECT_SUCCESS'

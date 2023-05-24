@@ -1,5 +1,5 @@
 import axios from 'axios'
+import { API_HOSTNAME } from 'constants/base'
 
-const clientApi = axios.create()
-
-export default clientApi
+export const fetchInit = async () => await axios.get(`${API_HOSTNAME}/init`)
+export const fetchProject = async (id: string) => await axios.get(`${API_HOSTNAME}/project/${id}`)

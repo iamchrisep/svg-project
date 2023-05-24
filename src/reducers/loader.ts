@@ -1,22 +1,19 @@
-import type {
-    IStore,
-    ILoader
-} from '../types/reducer'
-import type { IAction } from '../types/action'
-import * as redux from '../constants/redux'
+import type * as reducer from 'types/reducer'
+import type * as action from 'types/action'
+import * as redux from 'constants/redux'
 
-const initialState: ILoader = {
-    is_loader: false
+const initialState: reducer.ILoader = {
+    isLoading: false
 }
 
-export default function loaderState (state: ILoader = initialState, action: IAction) {
+export default function loaderState (state: reducer.ILoader = initialState, action: action.ILoader) {
     const { type } = action
     switch (type) {
         case redux.START_LOADER: {
-            return { ...state, is_loader: true }
+            return { ...state, isLoading: true }
         }
         case redux.FINISH_LOADER: {
-            return { ...state, is_loader: false }
+            return { ...state, isLoading: false }
         }
         case redux.RESET: {
             return { ...initialState }
@@ -27,4 +24,4 @@ export default function loaderState (state: ILoader = initialState, action: IAct
     }
 }
 
-export const getLoaderState = (store: IStore) => store.loaderState
+export const getLoaderState = (store: reducer.IStore) => store.loaderState

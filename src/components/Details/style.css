@@ -1,0 +1,15 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.details__field {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.details__label {
+    font-weight: 700;
+}

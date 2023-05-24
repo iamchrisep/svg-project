@@ -1,10 +1,10 @@
-import * as redux from '../constants/redux'
-import type { IAction } from '../types/action'
+import * as redux from 'constants/redux'
+import type { ILoader } from 'types/action'
 
-export const startLoaderAction = (): IAction => ({
+export const startLoader = (): ILoader => ({
     type: redux.START_LOADER
 })
 
-export const finishLoaderAction = (): IAction => ({
+export const finishLoader = (): ILoader => ({
     type: redux.FINISH_LOADER
 })

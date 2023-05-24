@@ -1,13 +1,78 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --foreground: #333333;
+    --background: #ffffff;
+    --primary: #6666ff;
+    --error: #cc3333;
+    --border: #cccccc;
+    --radius: 4px;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(var(--foreground));
+    background-color: rgb(var(--background));
+}
+
+body,
+#root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+a,
+input[type='text'],
+input[type='checkbox'],
+input[type='password'],
+input[type='email'],
+textarea,
+label {
+    -webkit-tap-highlight-color: transparent!important;
+}
+
+label {
+    font-weight: 700;
+}
+
+input[type='text'] {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--background);
+    padding: 0.75rem 1.5rem;
+    outline: none;
+}
+
+button {
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+    background-color: var(--primary);
+    padding: 0.75rem 2rem;
+    outline: none;
+    color: var(--background);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+button:hover {
+    opacity: 1;
 }

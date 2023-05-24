@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
+import './normalize.css'
 import './index.css'
-import App from './App'
+import App from './containers/App'
 import reportWebVitals from './reportWebVitals'
 import { store } from './store'
 
@@ -12,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <Provider store={store}>
-            <App/>
+            <App />
         </Provider>
     </React.StrictMode>
 )
