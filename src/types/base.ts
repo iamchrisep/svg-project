@@ -1,3 +1,5 @@
+import { IProjectYup } from 'utils/yup'
+
 export interface ILoader {
     isLoading: boolean
 }
@@ -29,16 +31,7 @@ export interface IItem {
     height: number
 }
 
-export interface IProject {
-    id: string
-    project: {
-        id: string
-        name: string
-        width: number
-        height: number
-        items: IItem[]
-    }
-}
+export interface IProject extends IProjectYup {}
 
 export interface ICanvas {
     width: number

@@ -25,6 +25,7 @@
         "src"
     ],
     "exclude": [
-        "src/reportWebVitals.ts"
+        "src/reportWebVitals.ts",
+        "src/utils/yup.ts"
     ]
 }
