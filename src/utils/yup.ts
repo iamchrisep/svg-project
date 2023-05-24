@@ -45,7 +45,9 @@ export const projectSchema = yup.object({
                 width: yup.number().required().positive().moreThan(0),
                 height: yup.number().required().positive().moreThan(0)
             }).required()
-        ).required().min(1).unique('ID list must be unique', (val: any) => val.id)
+        ).required().min(1)
+            // add unique ID check if you need
+            // .unique('ID list must be unique', (val: any) => val.id)
     }).required()
 })
 
