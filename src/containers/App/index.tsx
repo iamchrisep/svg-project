@@ -1,8 +1,8 @@
 import React from 'react'
-import './style.css'
-import logo from 'logo.png'
-import Form from 'components/Form'
 import Content from 'components/Content'
+import Form from 'components/Form'
+import logo from 'logo.png'
+import './style.css'
 
 const App: React.FC = () => {
     return (

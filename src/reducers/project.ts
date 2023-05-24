@@ -1,6 +1,6 @@
+import * as redux from 'constants/redux'
 import type * as reducer from 'types/reducer'
 import type * as action from 'types/action'
-import * as redux from 'constants/redux'
 
 const initialState: reducer.IProject = {
     id: '',

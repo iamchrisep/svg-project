@@ -39,3 +39,9 @@ export interface IProject {
         items: IItem[]
     }
 }
+
+export interface ICanvas {
+    width: number
+    height: number
+    items: IItem[]
+}

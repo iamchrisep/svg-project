@@ -7,7 +7,8 @@ import Details from 'components/Details'
 import type { IStore } from 'types/reducer'
 import { getLoaderState } from 'reducers/loader'
 import type { IError, ILoader } from 'types/base'
-import { getErrorState } from '../../reducers/error'
+import { getErrorState } from 'reducers/error'
+import SVGCanvas from 'components/SVGCanvas'
 
 const Content: React.FC<ILoader & IError> = ({
     isLoading,
@@ -18,6 +19,7 @@ const Content: React.FC<ILoader & IError> = ({
     return (
         <>
             <Details />
+            <SVGCanvas />
         </>
     )
 }

@@ -25,7 +25,7 @@ const Error: React.FC<IError> = ({
                         {' '}
                         &mdash;
                         {' '}
-                        <span className="error__status">
+                        <span className="error__field">
                             {error.response.status}
                         </span>
                     </>
@@ -37,7 +37,7 @@ const Error: React.FC<IError> = ({
                         {' '}
                         &mdash;
                         {' '}
-                        <span className="error__status">
+                        <span className="error__field">
                             {error.response.data.message}
                         </span>
                     </>
