@@ -12,11 +12,8 @@ export function * fetchInit (): SagaIterator {
         yield put(startLoader())
         const { data } = yield call(api.fetchInit)
         yield put(fetchInitSuccess(data))
-        const id: string = data.id
-        if (id.length > 0) {
-            yield put(fetchProjectRequest(id))
-        }
-    } catch (error) {
+        yield put(fetchProjectRequest())
+    } catch (error: any) {
         yield put(fetchError(error))
         yield put(finishLoader())
     }

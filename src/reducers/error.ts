@@ -4,7 +4,7 @@ import * as redux from 'constants/redux'
 
 const initialState: reducer.IError = {
     isError: false,
-    status: ''
+    error: undefined
 }
 
 export default function initState (state: reducer.IError = initialState, action: action.IError) {
@@ -13,7 +13,7 @@ export default function initState (state: reducer.IError = initialState, action:
         case redux.FETCH_ERROR: {
             return {
                 ...state,
-                status: payload,
+                error: payload,
                 isError: true
             }
         }

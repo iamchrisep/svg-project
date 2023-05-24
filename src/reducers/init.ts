@@ -17,6 +17,12 @@ export default function initState (state: reducer.IInit = initialState, action: 
                 ...payload
             }
         }
+        case redux.SET_CUSTOM_ID: {
+            return {
+                ...initialState,
+                id: payload
+            }
+        }
         case redux.RESET: {
             return { ...initialState }
         }

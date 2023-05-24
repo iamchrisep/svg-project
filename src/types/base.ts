@@ -4,7 +4,7 @@ export interface ILoader {
 
 export interface IError {
     isError?: boolean
-    status?: string
+    error?: any
 }
 
 export interface IDetails {

@@ -14,10 +14,11 @@ export interface IInitRequest extends IAction {}
 export interface IInitSuccess extends IAction {
     payload: IInit
 }
-
-export interface IProjectRequest extends IAction {
-    payload: string;
+export interface ICustomId extends IAction {
+    payload: string
 }
+
+export interface IProjectRequest extends IAction {}
 export interface IProjectSuccess extends IAction {
     payload: IProject
 }

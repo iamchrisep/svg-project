@@ -1,21 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { bindActionCreators } from 'redux'
 import type { Dispatch } from 'redux'
 import { connect } from 'react-redux'
-import { fetchInitRequest } from 'actions/init'
+import { fetchInitRequest, setCustomId } from 'actions/init'
+import { fetchProjectRequest } from 'actions/project'
 import './style.css'
 import type { IStore } from 'types/reducer'
 import { getInitState } from 'reducers/init'
 
 interface Props {
+    setCustomIdAction: (payload: string) => void
     fetchInitRequest: () => void
+    fetchProjectRequest: () => void
 }
 
 const Form: React.FC<Props> = ({
-    fetchInitRequest
+    setCustomIdAction,
+    fetchInitRequest,
+    fetchProjectRequest
 }) => {
+    const [customId, setCustomId] = useState('')
+
+    const handleChange = (e: { target: HTMLInputElement }) => {
+        setCustomId(e.target.value)
+        setCustomIdAction(e.target.value)
+    }
+
+    const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            handleFetch()
+        }
+    }
+
     const handleFetch = () => {
-        fetchInitRequest()
+        if (customId.length > 0) {
+            fetchProjectRequest()
+        } else {
+            fetchInitRequest()
+        }
     }
 
     return (
@@ -27,10 +49,14 @@ const Form: React.FC<Props> = ({
                 id="id"
                 type="text"
                 placeholder="For random leave empty"
+                value={customId}
+                onChange={handleChange}
+                onKeyUp={handleKeyUp}
             />
             <button
                 className="button"
                 onClick={() => { handleFetch() }}
+                type="submit"
             >
                 Fetch
             </button>
@@ -44,7 +70,9 @@ const mapStateToProps = (store: IStore) => ({
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    fetchInitRequest: bindActionCreators(fetchInitRequest, dispatch)
+    setCustomIdAction: bindActionCreators(setCustomId, dispatch),
+    fetchInitRequest: bindActionCreators(fetchInitRequest, dispatch),
+    fetchProjectRequest: bindActionCreators(fetchProjectRequest, dispatch)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form)
