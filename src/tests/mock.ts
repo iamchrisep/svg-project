@@ -74,6 +74,34 @@ export const fetchProjectApiResponse: reducer.IProject = {
         }]
     }
 }
+export const fetchProjectInvalidApiResponse: reducer.IProject = {
+    id: '123',
+    project: {
+        id: '987',
+        name: 'Name',
+        width: 100,
+        height: 100,
+        items: [{
+            id: '654',
+            type: 'rectangle',
+            color: '#000000',
+            rotation: 90,
+            x: -100,
+            y: 200,
+            width: 200,
+            height: 100,
+        }, {
+            id: '456',
+            type: 'ellipse',
+            color: '#ffffff',
+            rotation: -45,
+            x: 200,
+            y: 100,
+            width: 100,
+            height: 200,
+        }]
+    }
+}
 
 export const clearErrorAction: action.IActionType = {
     action: {
@@ -97,8 +125,3 @@ export const projectRequestAction: action.IActionType = {
         type: saga.FETCH_PROJECT_REQUEST
     }
 }
-
-export const projectSuccessAction: action.IProjectSuccess = {
-    type: redux.FETCH_PROJECT_SUCCESS,
-    payload: fetchProjectApiResponse,
-};
