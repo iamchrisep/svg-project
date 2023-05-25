@@ -1,9 +1,10 @@
-import * as reducer from 'types/reducer';
-import * as base from 'types/base';
+import * as reducer from 'types/reducer'
+import * as base from 'types/base'
+import * as action from 'types/action'
+import * as redux from 'constants/redux'
+import * as saga from 'constants/saga'
 
-export const loaderState: reducer.ILoader = {
-    isLoading: false
-}
+export const errorMessage = 'Invalid project data'
 
 export const errorState: reducer.IError = {
     isError: false,
@@ -12,9 +13,13 @@ export const errorState: reducer.IError = {
 export const fetchErrorApiResponse = {
     response: {
         data: {
-            message: 'Error message'
+            message: errorMessage
         }
     }
+}
+
+export const loaderState: reducer.ILoader = {
+    isLoading: false
 }
 
 export const initState: reducer.IInit = {
@@ -69,3 +74,31 @@ export const fetchProjectApiResponse: reducer.IProject = {
         }]
     }
 }
+
+export const clearErrorAction: action.IActionType = {
+    action: {
+        type: redux.CLEAR_ERROR
+    }
+}
+
+export const startLoaderAction: action.IActionType = {
+    action: {
+        type: redux.START_LOADER
+    }
+}
+export const finishLoaderAction: action.IActionType = {
+    action: {
+        type: redux.FINISH_LOADER
+    }
+}
+
+export const projectRequestAction: action.IActionType = {
+    action: {
+        type: saga.FETCH_PROJECT_REQUEST
+    }
+}
+
+export const projectSuccessAction: action.IProjectSuccess = {
+    type: redux.FETCH_PROJECT_SUCCESS,
+    payload: fetchProjectApiResponse,
+};

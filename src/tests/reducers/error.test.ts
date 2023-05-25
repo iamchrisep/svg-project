@@ -1,6 +1,7 @@
 import errorState from 'reducers/error'
 import * as redux from 'constants/redux'
 import * as mock from 'tests/mock'
+import { errorMessage } from 'tests/mock'
 
 describe('Error reducer', () => {
     let state = mock.errorState
@@ -17,7 +18,7 @@ describe('Error reducer', () => {
         const payload = mock.fetchErrorApiResponse
         state = errorState(state, { type: redux.FETCH_ERROR, payload })
         expect(state.isError).toBeTruthy()
-        expect(state.error.response.data.message).toEqual('Error message')
+        expect(state.error.response.data.message).toEqual(mock.errorMessage)
     })
 
     it(redux.CLEAR_ERROR, () => {

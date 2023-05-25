@@ -3,6 +3,12 @@ import { ICustomId, IInit, IProject } from './base'
 export interface IAction {
     type: string
 }
+export interface IActionData extends IAction {
+    payload?: any
+}
+export interface IActionType {
+    action: IActionData
+}
 
 export interface IError extends IAction {
     payload: any
