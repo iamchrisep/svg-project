@@ -20,6 +20,10 @@ export interface IInit {
     modified: number
 }
 
+export interface ICustomId {
+    id: string
+}
+
 export interface IItem {
     id: string
     type: 'rectange' | 'ellipse' | string

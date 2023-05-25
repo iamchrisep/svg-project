@@ -8,7 +8,7 @@ const initialState: reducer.IInit = {
     modified: 0
 }
 
-export default function initState (state: reducer.IInit = initialState, action: action.IInitSuccess) {
+export default function initState (state: reducer.IInit = initialState, action: action.IInitSuccess | action.ICustomIdSuccess) {
     const { type, payload } = action
     switch (type) {
         case redux.FETCH_INIT_SUCCESS: {
@@ -20,7 +20,7 @@ export default function initState (state: reducer.IInit = initialState, action: 
         case redux.SET_CUSTOM_ID: {
             return {
                 ...initialState,
-                id: payload
+                ...payload
             }
         }
         case redux.RESET: {

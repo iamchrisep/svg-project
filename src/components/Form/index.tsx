@@ -5,11 +5,12 @@ import { connect } from 'react-redux'
 import { fetchInitRequest, setCustomId } from 'actions/init'
 import { fetchProjectRequest } from 'actions/project'
 import './style.css'
+import type { ICustomId } from 'types/base'
 import type { IStore } from 'types/reducer'
 import { getInitState } from 'reducers/init'
 
 interface Props {
-    setCustomIdAction: (payload: string) => void
+    setCustomIdAction: (payload: ICustomId) => void
     fetchInitRequest: () => void
     fetchProjectRequest: () => void
 }
@@ -23,7 +24,7 @@ const Form: React.FC<Props> = ({
 
     const handleChange = (e: { target: HTMLInputElement }) => {
         setCustomId(e.target.value)
-        setCustomIdAction(e.target.value)
+        setCustomIdAction({ id: e.target.value })
     }
 
     const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {

@@ -1,4 +1,4 @@
-import { IInit, IProject } from './base'
+import { ICustomId, IInit, IProject } from './base'
 
 export interface IAction {
     type: string
@@ -14,8 +14,8 @@ export interface IInitRequest extends IAction {}
 export interface IInitSuccess extends IAction {
     payload: IInit
 }
-export interface ICustomId extends IAction {
-    payload: string
+export interface ICustomIdSuccess extends IAction {
+    payload: ICustomId
 }
 
 export interface IProjectRequest extends IAction {}
